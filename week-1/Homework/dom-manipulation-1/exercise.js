@@ -15,7 +15,9 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
-
+let elementsP = document.querySelectorAll("p");
+let elementsSix = elementsP.length === 6;
+console.log(elementsSix);
 
 /*
 Task 2
