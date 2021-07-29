@@ -22,6 +22,9 @@ console.log(elementsSix);
 let firstElementDiv = document.querySelector("div.site-header");
 console.log(firstElementDiv);
 
+let firstElemntId = document.querySelector("#jumbotron-text");
+console.log(firstElemntId);
+
 /*
 Task 2
 ======
