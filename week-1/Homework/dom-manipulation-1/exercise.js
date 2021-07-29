@@ -25,6 +25,9 @@ console.log(firstElementDiv);
 let firstElemntId = document.querySelector("#jumbotron-text");
 console.log(firstElemntId);
 
+let elementsP2 = document.querySelectorAll("p.primary-content");
+console.log(elementsP2.length==3);
+
 /*
 Task 2
 ======
