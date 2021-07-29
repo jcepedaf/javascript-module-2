@@ -19,6 +19,9 @@ let elementsP = document.querySelectorAll("p");
 let elementsSix = elementsP.length === 6;
 console.log(elementsSix);
 
+let firstElementDiv = document.querySelector("div.site-header");
+console.log(firstElementDiv);
+
 /*
 Task 2
 ======
