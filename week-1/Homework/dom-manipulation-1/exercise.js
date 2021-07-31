@@ -96,6 +96,24 @@ When the 'Add' button is clicked, get the text inside the input field and create
 Also clear the text inside the input field
 */
 
+let addButton = document.querySelector('#addArticleBtn').addEventListener('click', (e) => {
+    const inputText = document.querySelector('.addArticle').value;
+    let text1 = inputText.trim()
+    addParagraph(text1)
+})
+
+function addParagraph(text){
+    const pContainer = document.querySelector("#mainArticles")
+    const article = document.createElement("article")
+    article.classList.add("article")
+    const para = document.createElement('p')
+    para.classList.add("article-lead")
+    para.textContent = text
+    article.appendChild(para)
+    pContainer.appendChild(article)
+    document.querySelector('.addArticle').value = '';
+}
+
 /*
 Task 7
 ======
