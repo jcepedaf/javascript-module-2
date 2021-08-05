@@ -41,7 +41,7 @@ var cityBarcelona = {
     isMultiCultural: true,
     population: "5mill",
     hasMontain: true
-}
+};
 
 var monitor = {
     size: "24inch",
@@ -49,7 +49,7 @@ var monitor = {
     isHD: true,
     color: "gray",
     isTouchScreen: false
-}
+};
 
 
 var mobilePhone = {
@@ -57,4 +57,4 @@ var mobilePhone = {
     size: "9inch"
     SO: "android",
     version: 12
-    }
+};
