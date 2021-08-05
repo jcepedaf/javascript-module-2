@@ -54,7 +54,7 @@ var monitor = {
 
 var mobilePhone = {
     brand: "xiaomi",
-    size: "9inch"
+    size: "9inch",
     SO: "android",
     version: 12
 };
