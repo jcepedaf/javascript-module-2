@@ -24,12 +24,11 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+let persons = [person1,person2,person3];// Complete here
 
-let persons = // Complete here
+let personNames = persons.map(function(arra) { return arra.name});// Complete here
 
-let personNames = // Complete here
-
-let personsYoungerThan28YearsOld = // Complete here
+let personsYoungerThan28YearsOld = persons.filter(function(arra) { return arra.age < 28})// Complete here
 
 
 /*
