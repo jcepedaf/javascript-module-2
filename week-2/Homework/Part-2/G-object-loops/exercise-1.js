@@ -15,6 +15,6 @@ const studentGrades = {
 
   for (let i =0 ; i < Object.keys(studentGrades).length ; i ++){
     if(Object.values(studentGrades)[i]>18){
-      console.log(Object.keys(studentGrades)[i]+" - "+Object.values(studentGrades)[i])
+      console.log(Object.keys(studentGrades)[i].toUpperCase()+" - "+Object.values(studentGrades)[i])
     }
   }
