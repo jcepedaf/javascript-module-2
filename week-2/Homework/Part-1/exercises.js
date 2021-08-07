@@ -15,7 +15,21 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+
+for(let i=0; i < arrayOfPeople.length; i++){
+  let h1Elem = document.createElement("h1");
+  h1Elem.textContent = arrayOfPeople[i].name;
+  content.appendChild(h1Elem);
+
+  let h2Elem = document.createElement("h2");
+  h2Elem.textContent = arrayOfPeople[i].job;
+  content.appendChild(h2Elem);
 }
+
+}
+
+
 
 /**
  *
@@ -26,6 +40,16 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  const content = document.querySelector("#content");
+  let ulElem = document.createElement("ul");
+  content.appendChild(ulElem);
+
+  for (let i=0; i < shopping.length; i++){
+    let listElem = document.createElement("li");
+    listElem.innerHTML = shopping[i];
+    ulElem.appendChild(listElem);
+  }
+
 }
 
 /**
@@ -59,6 +83,20 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  const booklist = document.createElement("ul");
+
+  books.forEach( book => { 
+    const bookItem = document.createElement("li");
+    const bookDetails = document.createElement("p");
+    bookDetails.textContent = `${book.title} - ${book.author}`;
+    
+    bookItem.appendChild(bookDetails);
+    booklist.appendChild(bookItem);
+    
+  });
+
+  document.body.appendChild(booklist);
+
 }
 
 //
