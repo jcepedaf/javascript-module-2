@@ -51,16 +51,34 @@ var shoppingCart = {
 };
 
 function addToShoppingCart(id){
-
-}
+  products.forEach(product => {
+    if (product.id === id){
+      shoppingCart.selectedProducts.push(product);
+      shoppingCart.totalPrice += product.price;
+    };
+  });
+};
 
 function removeFromShoppingCart(id){
-
-}
+  shoppingCart.selectedProducts.forEach((product,index) => {
+    if (product.id === id){
+      shoppingCart.selectedProducts.splice(index,1);
+      shoppingCart.totalPrice -= product.price;
+    };
+  });
+};
 
 function shop(){
-
-}
+  shoppingCart.selectedProducts.forEach(shoppingCartProduct => {
+    products.forEach((product) => {
+      if (product.id === shoppingCartProduct.id){
+        product.stock-= 1;
+      };
+    });
+    shoppingCart.selectedProducts = [];
+    shoppingCart.totalPrice = 0;
+  });
+};
 
 //results
 addToShoppingCart(1);
