@@ -7,7 +7,14 @@ const studentGrades = {
     george: 17,
     abdul: 19,
   };
-  
+
+   
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  for (let i =0 ; i < Object.keys(studentGrades).length ; i ++){
+    if(Object.values(studentGrades)[i]>18){
+      console.log(Object.keys(studentGrades)[i]+" - "+Object.values(studentGrades)[i])
+    }
+  }
