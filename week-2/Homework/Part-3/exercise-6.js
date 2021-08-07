@@ -101,3 +101,68 @@ var mentors = [
 
 //YOUR CODE HERE
 
+ const mentorsInBarcelonaAndReact = mentors.filter(mentor => mentor.job.city === "Barcelona" && mentor.skills.includes("React"))
+ mentorsInBarcelonaAndReact.forEach(mentor => console.log(mentor.firstName+" "+mentor.lastName));
+
+ mentorsInBarcelonaAndReact.forEach(mentor => {
+   mentor.class = "Jun1";
+   mentor.skills.push("SQL");
+ });
+
+ mentors.forEach(mentor => {
+   mentor.addSkills = function(skill) {
+      this.skills.push(skill);
+   }
+ });
+
+ //mentors[0].addSkills("Clean");
+ //console.log(mentors[0]);
+
+ function addSkill(mentors,skill){
+   mentors.forEach(mentor => {
+    mentor.skills.push(skill);
+   })
+ };
+
+ function removeSkill(mentors,skill){
+  mentors.forEach(mentor => {
+   const skillPosition = mentor.skills.findIndex(mentorSkill => mentorSkill === skill);
+   if(skillPosition != -1){
+     mentor.skills.splice(skillPosition,1);
+   }
+  })
+};
+
+//removeSkill(mentors,"React");
+//console.log(mentors[0]);
+
+function mentorMoreSkill (mentors) {
+     let result = 0;
+     let indexMentor = 0;
+     mentors.forEach((mentor,index) =>  {
+       if(result < mentor.skills.length){
+         result = mentor.skills.length;
+         indexMentor = index;
+       }
+     })
+     return mentors[indexMentor];
+};
+
+//console.log(mentorMoreSkill(mentors));
+
+mentors.forEach(mentor => {
+  mentor.addStudentLikes = function() {
+     this.studentLikes++;
+  }
+});
+
+//mentors[0].addStudentLikes();
+//console.log(mentors[0]);
+
+function addStudentLike(mentors){
+  mentors.forEach(mentor => {
+   mentor.studentLikes++;
+  })
+};
+
+
