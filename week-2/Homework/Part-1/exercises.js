@@ -84,14 +84,21 @@ function exerciseTwo(shopping) {
 function exerciseThree(books) {
   //Write your code in here
   const booklist = document.createElement("ul");
-
+ 
   books.forEach( book => { 
     const bookItem = document.createElement("li");
     const bookDetails = document.createElement("p");
+    const bookImg = document.createElement("img");
     bookDetails.textContent = `${book.title} - ${book.author}`;
+    bookImg.setAttribute("src",book.imagesBooks);
+    bookImg.style.width = "200px";
+
+    
     
     bookItem.appendChild(bookDetails);
     booklist.appendChild(bookItem);
+    bookItem.appendChild(bookImg)
+    
     
   });
 
@@ -125,17 +132,20 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
+    imagesBooks: "https://media.shortform.com/covers/png/the-design-of-everyday-things-cover@8x.png",
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
+    imagesBooks: "https://images-na.ssl-images-amazon.com/images/I/41Z56GwEv9L._SX322_BO1,204,203,200_.jpg",
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
+    alreadyRead: true,
+    imagesBooks: "https://m.media-amazon.com/images/S/aplus-media/vc/fb71c565-0ec5-44b3-81e1-848bbcccb96f._CR0,5,516,516_PT0_SX300__.jpg"
   }
 ];
 
