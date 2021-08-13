@@ -60,7 +60,7 @@ var movies = [
 
 // create showMovies function
 
-function showMovies(movies){
+/*function showMovies(movies){
   const AllMovies = document.querySelector("#all-movies"); 
   const MoviesNumber = document.querySelector("#movies-number"); 
 
@@ -75,9 +75,41 @@ function showMovies(movies){
   MoviesNumber.innerText= movies.length;
 };
 
-showMovies(movies);
+showMovies(movies);*/
 
 // create a new movie object for your favorite movie
+
+var myMovies = {
+    title: "The Chronicles of Riddick",
+    director: "David Twohy",
+    type: "Action",
+    haveWatched: true,
+  };
+  
+
+
+
+function showMovies(movies){
+  const AllMovies = document.querySelector("#all-movies"); 
+  const MoviesNumber = document.querySelector("#movies-number"); 
+
+  setTimeout(function(){movies.forEach(movie => { 
+    const elementsP = document.createElement("p"); 
+   
+    elementsP.textContent = ` Title: ${movie.title} - Director: ${movie.director}`; 
+
+    AllMovies.appendChild(elementsP);
+  });
+  }, 1000);
+  MoviesNumber.innerText= movies.length;
+};
+
+function addMovies(movie){
+  setTimeout(movies.push(movie),2000);
+};
+
+addMovies(myMovies);
+showMovies(movies);
 
 
 // create addMovies function
