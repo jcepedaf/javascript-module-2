@@ -60,6 +60,22 @@ var movies = [
 
 // create showMovies function
 
+function showMovies(movies){
+  const AllMovies = document.querySelector("#all-movies"); 
+  const MoviesNumber = document.querySelector("#movies-number"); 
+
+  movies.forEach(movie => { 
+    const elementsP = document.createElement("p"); 
+   
+    elementsP.textContent = ` Title: ${movie.title} - Director: ${movie.director}`; 
+
+    AllMovies.appendChild(elementsP);
+  });
+  
+  MoviesNumber.innerText= movies.length;
+};
+
+showMovies(movies);
 
 // create a new movie object for your favorite movie
 
