@@ -85,31 +85,57 @@ var myMovies = {
     type: "Action",
     haveWatched: true,
   };
-  
-
-
 
 function showMovies(movies){
   const AllMovies = document.querySelector("#all-movies"); 
   const MoviesNumber = document.querySelector("#movies-number"); 
 
-  setTimeout(function(){movies.forEach(movie => { 
+  document.querySelectorAll(`#all-movies p:not(.alert)`).forEach(paragraph => paragraph.remove());
+
+  movies.forEach((movie,index) => {
     const elementsP = document.createElement("p"); 
    
     elementsP.textContent = ` Title: ${movie.title} - Director: ${movie.director}`; 
 
-    AllMovies.appendChild(elementsP);
+    setTimeout(() => { AllMovies.appendChild(elementsP)}, 1000*index);
   });
-  }, 1000);
+
   MoviesNumber.innerText= movies.length;
 };
 
+showMovies(movies);
+
+// create addMovies function
+
 function addMovies(movie){
-  setTimeout(movies.push(movie),2000);
+  setTimeout(() => {
+    movies.push(movie);
+    showMovies(movies);
+  }, 4000);
 };
 
 addMovies(myMovies);
-showMovies(movies);
 
 
-// create addMovies function
+let submitButtons = document.getElementById('submit');
+
+submitButtons.addEventListener('click', (event) => {
+
+  event.preventDefault();
+
+  const title = document.getElementById('title');
+  const director = document.getElementById('director');
+  const type = document.getElementById('type');
+  const haveWatched = document.getElementById('haveWatched');
+
+  myMovies = {
+    title: title.value,
+    director: director.value,
+    type: type.value,
+    haveWatched: haveWatched.checked
+  };
+
+  addMovies(myMovies);
+});
+
+
