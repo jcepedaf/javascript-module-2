@@ -16,11 +16,21 @@ Update your code to make the colour change every 5 seconds to something differen
 
 //tarea dos
 
-let i = 0; 
-function backgroundChange() {
-    let colors = ["blue", "red", "green", "gray", "brown", "yellow"]; 
-    document.body.style.backgroundColor = colors[i]; 
-    i++ % colors.length;
+function generateNumberRandom() {
+    return parseInt(Math.random() * (255 - 0) + 0);
+    
 };
 
-setInterval(backgroundChange, 5000);
+let i = 0; 
+function backgroundChange() {
+    //let colors = ["blue", "red", "green", "gray", "brown", "yellow"]; 
+    document.body.style.backgroundColor = `rgb(${generateNumberRandom()},${generateNumberRandom()},${generateNumberRandom()})`; 
+    //i++;
+    //if(i === colors.length){
+        //i=0;
+    //}
+    console.log(generateNumberRandom());
+
+};
+
+setInterval(backgroundChange, 1000);
